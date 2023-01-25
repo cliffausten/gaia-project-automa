@@ -1,6 +1,6 @@
-import { createContext, JSX, ParentComponent, useContext } from "solid-js";
+import { createContext, JSX, ParentComponent, useContext } from 'solid-js';
 
-import RootStore, { createRootStore } from "../../stores/RootStore";
+import RootStore, { createRootStore } from '../../stores/RootStore';
 
 const store = createRootStore();
 

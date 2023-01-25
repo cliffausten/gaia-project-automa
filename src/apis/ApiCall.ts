@@ -1,15 +1,15 @@
-import Result from "../models/Result";
+import Result from '../models/Result';
 
 export default class ApiCall {
   url: string;
 
   constructor() {
-    this.url = "";
+    this.url = '';
   }
 
   protected async apiCall(
     method: string,
-    operation = "GET",
+    operation = 'GET',
     body = null
   ): Promise<Result> {
     const result = new Result();
@@ -22,8 +22,8 @@ export default class ApiCall {
           method: operation,
           body: JSON.stringify(body),
           headers: new Headers({
-            "Content-Type": "application/json",
-            Accept: "application/json",
+            'Content-Type': 'application/json',
+            Accept: 'application/json',
           }),
         };
       } else {

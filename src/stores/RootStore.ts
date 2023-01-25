@@ -1,6 +1,6 @@
-import StateStore from "./StateStore";
-import ExampleStore from "./ExampleStore";
-import ExampleApi from "../apis/ExampleApi";
+import StateStore from './StateStore';
+import ExampleStore from './ExampleStore';
+import ExampleApi from '../apis/ExampleApi';
 
 export default class RootStore {
   stateStore: StateStore;

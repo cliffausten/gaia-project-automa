@@ -1,9 +1,9 @@
-import { Component, enableExternalSource } from "solid-js";
-import { Reaction } from "mobx";
+import { Component, enableExternalSource } from 'solid-js';
+import { Reaction } from 'mobx';
 
-import styles from "./App.module.css";
-import StoreProvider from "./components/StoreProvider";
-import StateRouter from "./components/StateRouter";
+import styles from './App.module.css';
+import StoreProvider from './components/StoreProvider';
+import StateRouter from './components/StateRouter';
 
 // register MobX as an external source
 let id = 0;
@@ -22,11 +22,11 @@ enableExternalSource((fn, trigger) => {
 const App: Component = () => {
   return (
     <StoreProvider>
-      <div class={styles["mainPage"]}>
-        <header class={styles["header"]}>
+      <div class={styles['mainPage']}>
+        <header class={styles['header']}>
           <a class="coop-logo-link" aria-label="Homepage" href="/">
             <svg
-              class={styles["logo"]}
+              class={styles['logo']}
               xmlns="http://www.w3.org/2000/svg"
               width="38"
               height="40"

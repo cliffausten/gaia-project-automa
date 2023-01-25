@@ -1,12 +1,12 @@
-import { makeObservable, observable, action, runInAction } from "mobx";
-import Store from "./Store";
-import RootStore from "./RootStore";
-import ExampleApi from "../apis/ExampleApi";
+import { makeObservable, observable, action, runInAction } from 'mobx';
+import Store from './Store';
+import RootStore from './RootStore';
+import ExampleApi from '../apis/ExampleApi';
 
 class ExampleStore extends Store {
   exampleApi: ExampleApi = null;
-  quote = "Hellp";
-  author = "Barry";
+  quote = 'Hellp';
+  author = 'Barry';
   count = 0;
 
   constructor(rootStore: RootStore, exampleApi: ExampleApi) {
@@ -33,8 +33,8 @@ class ExampleStore extends Store {
         this.author = result.data.contents.quotes[0].author;
       } else {
         this.quote =
-          "If I have seen further than others, it is by standing upon the shoulders of giants.";
-        this.author = "Issac Newton";
+          'If I have seen further than others, it is by standing upon the shoulders of giants.';
+        this.author = 'Issac Newton';
       }
     });
   }

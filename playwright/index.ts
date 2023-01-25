@@ -1,7 +1,7 @@
 // Import styles, initialize component theme here.
 // import '../src/common.css';
-import { enableExternalSource } from "solid-js";
-import { Reaction } from "mobx";
+import { enableExternalSource } from 'solid-js';
+import { Reaction } from 'mobx';
 
 // register MobX as an external source
 let id = 0;
