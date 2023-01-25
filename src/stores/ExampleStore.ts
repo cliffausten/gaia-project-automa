@@ -5,8 +5,8 @@ import ExampleApi from "../apis/ExampleApi";
 
 class ExampleStore extends Store {
   exampleApi: ExampleApi = null;
-  quote = "";
-  author = "";
+  quote = "Hellp";
+  author = "Barry";
   count = 0;
 
   constructor(rootStore: RootStore, exampleApi: ExampleApi) {

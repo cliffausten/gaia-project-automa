@@ -10,6 +10,15 @@
       "name": "Launch Chrome against localhost",
       "url": "http://localhost:3000",
       "webRoot": "${workspaceFolder}"
+    },
+    {
+      "type": "node",
+      "request": "launch",
+      "name": "Debug Component Tests",
+      "skipFiles": ["<node_internals>/**"],
+      "program": "${file}",
+      "runtimeExecutable": "npm",
+      "runtimeArgs": ["run-script", "test-ct-debug"]
     }
   ]
 }
