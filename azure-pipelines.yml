@@ -6,7 +6,8 @@
 trigger:
   - master
 
-pool: retail shared
+pool:
+  vmImage: 'ubuntu-latest'
 
 steps:
   - task: NodeTool@0
