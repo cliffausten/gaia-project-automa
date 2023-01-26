@@ -24,6 +24,10 @@ steps:
     displayName: Npm Install
 
   - script: |
+      npx playwright install --with-deps
+    displayName: 'Install Playwright Browsers'
+
+  - script: |
       npm run test:ct:ci
       npm run build
     displayName: 'npm unit test and build'
