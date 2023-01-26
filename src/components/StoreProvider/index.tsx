@@ -1,10 +1,17 @@
-import { createContext, JSX, ParentComponent, useContext } from 'solid-js';
+import { Context, createContext, JSX, useContext } from 'solid-js';
 
 import RootStore, { createRootStore } from '../../stores/RootStore';
 
-const store = createRootStore();
+let store: RootStore;
 
-const StoreContext = createContext<RootStore>(store);
+let StoreContext: Context<RootStore>;
+
+export const setupStores = (rootStore?: RootStore) => {
+  if (rootStore) store = rootStore;
+  else store = createRootStore();
+
+  StoreContext = createContext<RootStore>(store);
+};
 
 export const useStores = () => useContext(StoreContext)!;
 

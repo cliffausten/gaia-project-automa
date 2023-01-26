@@ -3,6 +3,6 @@ export default class Store {
   rootStore: RootStore;
 
   constructor(rootStore: RootStore) {
-    this.rootStore = rootStore;
+    //this.rootStore = rootStore;
   }
 }

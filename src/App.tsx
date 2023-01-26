@@ -2,8 +2,9 @@ import { Component, enableExternalSource } from 'solid-js';
 import { Reaction } from 'mobx';
 
 import styles from './App.module.css';
-import StoreProvider from './components/StoreProvider';
+import StoreProvider, { setupStores } from './components/StoreProvider';
 import StateRouter from './components/StateRouter';
+import { createRootStore } from './stores/RootStore';
 
 // register MobX as an external source
 let id = 0;
@@ -20,6 +21,8 @@ enableExternalSource((fn, trigger) => {
 });
 
 const App: Component = () => {
+  setupStores();
+
   return (
     <StoreProvider>
       <div class={styles['mainPage']}>

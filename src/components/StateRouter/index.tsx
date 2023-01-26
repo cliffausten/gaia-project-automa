@@ -6,7 +6,7 @@ const StateRouter: Component = () => {
   const { stateStore } = useStores();
 
   return (
-    <Switch>
+    <Switch fallback={<div>Unknown route</div>}>
       <Match when={stateStore.state === 'initial'}>
         <ExamplePage />
       </Match>
