@@ -14,7 +14,7 @@ const ExampleComponent = ({ showAuthor }: Props) => {
     <div class={styles['example-component']}>
       <div class={styles['quote']}>{exampleStore.quote}</div>
       {showAuthor && <div class={styles['author']}>{exampleStore.author}</div>}
-      <div>{exampleStore.count}</div>
+      <div class={styles['count']}>{exampleStore.count}</div>
     </div>
   );
 };

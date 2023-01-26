@@ -7,12 +7,15 @@
     "dev": "vite",
     "build": "vite build",
     "serve": "vite preview",
-    "test-ct": "playwright test -c playwright-ct.config.ts",
-    "test-ct-debug": "playwright test -c playwright-ct.config.ts --debug"
+    "test:ct": "playwright test -c playwright-ct.config.ts",
+    "test:e2e": "playwright test",
+    "test:ct:ci": "playwright test -c playwright-ct.config.ts",
+    "test:integration:ci": "playwright test -c playwright.ci.config.ts"
   },
   "license": "MIT",
   "devDependencies": {
     "@playwright/experimental-ct-solid": "^1.30.0",
+    "@playwright/test": "^1.30.0",
     "@typescript-eslint/eslint-plugin": "^5.49.0",
     "@typescript-eslint/parser": "^5.49.0",
     "eslint-config-prettier": "^8.6.0",
