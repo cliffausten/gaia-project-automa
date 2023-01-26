@@ -10,7 +10,7 @@
     "test:ct": "playwright test -c playwright-ct.config.ts",
     "test:e2e": "playwright test",
     "test:ct:ci": "playwright test -c playwright-ct.config.ts",
-    "test:integration:ci": "playwright test -c playwright.ci.config.ts"
+    "test:e2e:ci": "playwright test -c playwright.ci.config.ts"
   },
   "license": "MIT",
   "devDependencies": {

@@ -5,7 +5,7 @@ import { devices } from '@playwright/experimental-ct-solid';
  * See https://playwright.dev/docs/test-configuration.
  */
 const config: PlaywrightTestConfig = {
-  testDir: './',
+  testDir: './src',
   /* The base directory, relative to the config file, for snapshot files created with toMatchSnapshot and toHaveScreenshot. */
   snapshotDir: './__snapshots__',
   /* Maximum time one test can run for. */
@@ -20,8 +20,14 @@ const config: PlaywrightTestConfig = {
   workers: process.env.CI ? 1 : undefined,
   /* Reporter to use. See https://playwright.dev/docs/test-reporters */
   reporter: [
-    ['html', { open: 'never' }],
-    ['junit', { outputFile: 'testing/test-results.xml' }],
+    [
+      'html',
+      {
+        open: 'never',
+        outputFolder: 'playwright/results/html',
+      },
+    ],
+    ['junit', { outputFile: 'playwright/results/component-results.xml' }],
   ],
   /* Shared settings for all the projects below. See https://playwright.dev/docs/api/class-testoptions. */
   use: {

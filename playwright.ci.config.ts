@@ -31,8 +31,14 @@ const config: PlaywrightTestConfig = {
   workers: process.env.CI ? 1 : undefined,
   /* Reporter to use. See https://playwright.dev/docs/test-reporters */
   reporter: [
-    ['html', { open: 'never' }],
-    ['junit', { outputFile: 'testing/test-results.xml' }],
+    [
+      'html',
+      {
+        open: 'never',
+        outputFolder: 'playwright/results/html',
+      },
+    ],
+    ['junit', { outputFile: 'playwright/results/e2e-results.xml' }],
   ],
   /* Shared settings for all the projects below. See https://playwright.dev/docs/api/class-testoptions. */
   use: {
