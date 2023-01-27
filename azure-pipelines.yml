@@ -4,7 +4,7 @@
 # https://docs.microsoft.com/azure/devops/pipelines/languages/javascript
 
 trigger:
-  - master
+  - main
 
 pool:
   vmImage: 'ubuntu-latest'
@@ -37,7 +37,7 @@ steps:
 
   - script: npm run test:e2e:ci
     displayName: 'Run e2e tests'
-    
+
   - task: ArchiveFiles@2
     inputs:
       rootFolderOrFile: 'test-results'
