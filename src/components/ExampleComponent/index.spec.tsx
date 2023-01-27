@@ -6,7 +6,7 @@ import ExampleComponent from './index';
 test.use({ viewport: { width: 500, height: 500 } });
 
 test.describe('ExampleComponent Tests', () => {
-  test.beforeAll(async ({ page }) => {
+  test.beforeEach(async ({ page }) => {
     await mockQuotesAPI(page);
   });
 
