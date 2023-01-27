@@ -28,9 +28,12 @@ steps:
     displayName: 'Install Playwright Browsers'
 
   - script: |
-      npm run test:ct:ci
       npm run build
-    displayName: 'npm unit test and build'
+    displayName: 'npm build'
+
+  - script: |
+      npm run test:ct:ci
+    displayName: 'Run component tests'
 
   - script: npm run test:e2e:ci
     displayName: 'Run e2e tests'
