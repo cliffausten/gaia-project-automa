@@ -34,14 +34,7 @@ steps:
 
   - script: npm run test:e2e:ci
     displayName: 'Run e2e tests'
-
-  - task: PublishTestResults@2
-    inputs:
-      testResultsFormat: 'JUnit'
-      testResultsFiles: '*.xml'
-      searchFolder: '$(System.DefaultWorkingDirectory)/playwright/results'
-    condition: succeededOrFailed()
-
+    
   - task: ArchiveFiles@2
     inputs:
       rootFolderOrFile: 'test-results'
@@ -50,6 +43,13 @@ steps:
       archiveFile: '$(Build.ArtifactStagingDirectory)/PlaywrightTraces.zip'
       replaceExistingArchive: true
     displayName: Archive Playwright Traces
+    condition: failed()
+
+  - task: PublishTestResults@2
+    inputs:
+      testResultsFormat: 'JUnit'
+      testResultsFiles: '*.xml'
+      searchFolder: '$(System.DefaultWorkingDirectory)/playwright/results'
     condition: succeededOrFailed()
 
   - task: ArchiveFiles@2
