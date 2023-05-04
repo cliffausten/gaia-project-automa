@@ -12,7 +12,7 @@
   background-color: blue;
   color: white;
   display: grid;
-  grid-template-columns: 40px 1fr 40px;
+  grid-template-columns: 1fr;
   grid-gap: 20px;
   padding: 10px;
   padding-bottom: 5px;

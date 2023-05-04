@@ -1,30 +1,22 @@
 import { makeObservable, observable, action, runInAction } from 'mobx';
 import Store from './Store';
 import RootStore from './RootStore';
-import ExampleApi from '../apis/ExampleApi';
+import { Deck } from '../models/deck';
 
-class ExampleStore extends Store {
-  exampleApi: ExampleApi = null;
-  quote = 'Hellp';
-  author = 'Barry';
-  count = 0;
+class DeckStore extends Store {
+  deck: Deck;
 
-  constructor(rootStore: RootStore, exampleApi: ExampleApi) {
+  constructor(rootStore: RootStore) {
     super(rootStore);
-    this.exampleApi = exampleApi;
-    makeObservable(this, {
-      quote: observable,
-      author: observable,
-      count: observable,
-      getNewQuote: action,
-    });
 
-    setInterval(() => {
-      this.count++;
-    }, 1000);
+    this.deck = new Deck();
+
+    makeObservable(this, {
+      deck: observable,
+    });
   }
 
-  async getNewQuote(): Promise<void> {
+  /*async getNewQuote(): Promise<void> {
     const result = await this.exampleApi.getQuote();
 
     runInAction(() => {
@@ -37,7 +29,7 @@ class ExampleStore extends Store {
         this.author = 'Issac Newton';
       }
     });
-  }
+  }*/
 }
 
-export default ExampleStore;
+export default DeckStore;

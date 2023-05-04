@@ -1,14 +1,13 @@
 import StateStore from './StateStore';
-import ExampleStore from './ExampleStore';
-import ExampleApi from '../apis/ExampleApi';
+import DeckStore from './DeckStore';
 
 export default class RootStore {
   stateStore: StateStore;
-  exampleStore: ExampleStore;
+  deckStore: DeckStore;
 
   constructor() {
     this.stateStore = new StateStore(this);
-    this.exampleStore = new ExampleStore(this, new ExampleApi());
+    this.deckStore = new DeckStore(this);
   }
 }
 
