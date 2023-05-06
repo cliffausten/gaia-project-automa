@@ -93,15 +93,46 @@ export class Deck {
     this.activeCards = this.shuffle(this.activeCards);
 
     // Draw first cards
-    this.currentCard1 = this.activeCards.pop();
-    this.currentCard2 = this.activeCards.pop();
+    this.drawFirstCards();
 
     makeObservable(this, {
       activeCards: observable,
       remainingCards: observable,
       currentCard1: observable,
       currentCard2: observable,
+      drawNext: action,
+      pass: action,
     });
+  }
+
+  private drawFirstCards() {
+    this.currentCard1 = this.activeCards.pop();
+    this.currentCard2 = this.activeCards.pop();
+  }
+
+  drawNext(): void {
+    if (this.activeCards.length > 0) {
+      this.discardedCards.push(this.currentCard1);
+      this.currentCard1 = this.currentCard2;
+      this.currentCard2 = this.activeCards?.pop();
+    }
+  }
+
+  pass(): void {
+    const nextDeck = [
+      ...this.activeCards,
+      this.currentCard1,
+      this.currentCard2,
+      ...this.discardedCards,
+      this.remainingCards.pop(),
+    ];
+
+    this.activeCards = this.shuffle(nextDeck);
+    this.discardedCards = [];
+    this.currentCard1 = null;
+    this.currentCard2 = null;
+
+    this.drawFirstCards();
   }
 
   shuffle(deck: Array<Card>): Array<Card> {

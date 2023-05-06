@@ -1,0 +1,25 @@
+.card-component {
+  display: grid;
+  grid-template-columns: 1fr 299px 299px 1fr;
+  width: 100%;
+}
+
+.card-left{
+  justify-self: end;  
+  overflow: hidden;
+}
+
+.card-left img {
+  clip-path: inset(0px 0px 0px 88px);
+}
+
+.card-right{
+  justify-self: start;
+  overflow: hidden;
+}
+
+.card-right img {
+  clip-path: inset(0px 200px 0px 0px);
+
+}
+

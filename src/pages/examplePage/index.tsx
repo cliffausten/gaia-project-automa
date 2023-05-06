@@ -1,12 +1,12 @@
 import { Component } from 'solid-js';
-import CurrentCardComponent from '../../components/CurrentCardComponent';
 
 import styles from './ExamplePage.module.css';
+import DeckComponent from '../../components/DeckComponent';
 
 const ExamplePage: Component = () => {
   return (
     <div class={styles['example-page-grid']}>
-      <CurrentCardComponent />
+      <DeckComponent />
     </div>
   );
 };
